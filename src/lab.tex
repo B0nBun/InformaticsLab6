@@ -1,0 +1,146 @@
+% Saving this styling, because "Kvant" pages set it to their own
+\newcommand{\labstyling}{
+    \newgeometry{
+        top=2cm,
+        bottom=2cm,
+        inner=2cm,
+        outer=2cm
+    }
+    
+    \changefontsize{13pt}
+
+    % Positioning page-numbers for lab
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt} % Because of fancyhdr, a line appears at the top of the page
+}
+\labstyling
+
+\begin{titlepage}
+   \begin{center}
+        Федеральное государственное автономное \\
+        образовательное учреждение высшего образования \\
+        «Национальный исследовательский университет ИТМО» \\
+        Факультет Программной Инженерии и Компьютерной Техники \\
+        
+        \vspace{2cm}
+    
+        \begin{large}
+            Лабораторная работа № 6 \\
+            по дисциплине \\
+            "Информатика"
+                
+            \vspace{1.5cm}
+    
+            Вариант №3
+        \end{large}
+
+        \vfill
+       
+        \begin{flushright}
+            \textbf{Выполнил:} \\
+            Студент группы P3130, \\
+            Гусяков Ратмир Кириллович
+        \end{flushright}
+        \begin{flushright}
+            \textbf{Проверил:} \\
+            Балакшин Павел Валерьевич
+        \end{flushright}
+        
+        \vspace{0.5cm}
+        Санкт-Петербург \\
+        2022
+            
+   \end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\clearpage
+
+\section{Подготовка к заданию}
+
+\begin{enumerate}
+    \item Скачать и установить любой дистрибутив TEX (например, MiKTeX) или создать аккаунт на сайте ShareLaTeX (\url{sharelatex.com}), Overleaf (\url{overleaf.com}) или любом аналогичном.
+    
+    \item Выбрать год и номер журнала \guillements{Квант} (\url{kvant.ras.ru}) согласно варианту из таблицы на последней странице документа. Вариант выбирается как сумма последнего числа в номере группы, умноженного на 10, и номера в списке группы согласно ISU на текущий день.
+    
+    \item Выбрать одну страницу из всего номера, отвечающую следующим требованиям:
+        \begin{itemize}
+            \item Текст должен состоять минимум из 2 колонок.
+            
+            \item Заголовок не должен превышать 20\% от площади страницы.
+            
+            \item Страница должна содержать 1 или 2 картинки, общая площадь которых не должна превышать 40\% площади страницы.
+            
+            \item Текст должен содержать не менее 2 сложных формул. Желательно, чтобы были такие математические операции, как сумма элементов (не путать с простым сложением), извлечение корня, логарифм и т.п.
+            
+            \item В тексте должна быть как минимум 1 таблица. Размерность таблицы должна превышать 2*2 элемента.
+        \end{itemize}
+        В случае, если такая страница не найдена, то взять 1.5 страницы, где на одной будет б\`{о}льшая часть задания, а на оставшейся – меньшая. 
+        
+        В случае, если и таким образом страница не найдена, необходимо увеличить год выпуска на 19 лет и искать материал в новом выпуске
+\end{enumerate} 
+
+\section{Задание}
+
+\subsection{Обязательное задание}
+
+Сверстать страницу, максимально похожую на выбранную страницу из журнала
+\guillements{Квант}.
+
+\subsection{Необязательное задание}
+
+\emph{Выполнение данного задания позволяет получить до 10 дополнительных процентов от максимального числа баллов БаРС за данную лабораторную}
+
+\begin{enumerate}
+    \item Сверстать титульный лист
+    \item Создать файл \emph{main.tex}, в котором будет содержаться преамбула и ссылки на 2 документа: титульный лист и статью (ссылки создаются с помощью команды \verb|\input|).
+\end{enumerate}
+
+\subsection{Вариант}
+
+\begin{figure}[!htb]
+   \begin{minipage}{0.48\textwidth}
+     \centering
+     \includegraphics[width=.85\linewidth]{kvant_70_03-50.png}
+     \caption{\footnotesize{50-я страница 3 номера 1970 года. Два столбца, математические формулы и картинка}}\label{fig:kvant-70-page}
+   \end{minipage}\hfill
+   \begin{minipage}{0.48\textwidth}
+     \centering
+     \includegraphics[width=.9\linewidth]{kvant_89_03-20.png}
+     \caption{\footnotesize{20-я страница 3 номера 1989 года. Два столбца, картинка и таблица}}\label{fig:kvant-88-page}
+   \end{minipage}
+\end{figure}
+
+\newpage
+
+\section{Результат}
+
+\subsection{Исходный код}
+
+Исходный код со всеми фалами разметки и картинками: \newline
+\url{https://github.com/B0nBun/InformaticsLab6}
+
+\subsection{Итог}
+
+Следующие 2 страницы представляют результаты верстки
+
+\clearpage
+
+\invisiblesubsubsection{\guillements{Квант} 1970-03-50}
+\input{kvant_70_03-50}
+
+\clearpage
+
+\invisiblesubsubsection{\guillements{Квант} 1989-03-20}
+\input{kvant_89_03-20}
+
+\clearpage
+
+\labstyling
+
+\section{Вывод}
+
+В процессе выполнения этой лабораторной работы, я научился работать с основными механизмами системы разметки \LaTeX, такими как использование окружений, команд, создание макросов, счетчиков, вставка картинок, таблиц и т.д. Продемонстрировать же все эти умения мне удалось через копирование разметки журнала \guillements{Квант}.

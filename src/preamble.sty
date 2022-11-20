@@ -1,0 +1,58 @@
+% Language setting
+\usepackage[english,main=russian]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% Dummy text
+\usepackage{blindtext}
+% Changing default font size
+\usepackage{fontsize}
+% Multiple Columns
+\usepackage{multicol}
+% Inserting images with additional options
+\usepackage{float}
+% Changing colon to dot in captions
+\usepackage[labelsep=period]{caption}
+% Package for customizing page-numbers 
+\usepackage{fancyhdr}
+% Something for fonts
+\usepackage[T1,T2A]{fontenc}
+% Custom font for page-numbers
+\usepackage{tgadventor}
+% Better marginnotes
+\usepackage{marginnote}
+% For black square
+\usepackage{amssymb}
+% For line breaks in table cells
+\usepackage{makecell}
+
+
+% Using guillements («...») instead of quotes ("...")
+\newcommand{\guillements}[1]{«#1»}
+
+% Celsius symbol
+\newcommand{\celsius}{^\circ C}
+
+% Task counter
+\newcounter{taskcounter}
+\setcounter{taskcounter}{1} 
+\newcommand{\task}{
+    З\;а\;д\;а\;ч\;а\;\;\;\arabic{taskcounter}.\;
+    \stepcounter{taskcounter}
+}
+
+% Changing the default marker for itemize
+\renewcommand\labelitemi{---}
+
+% Invisible section to not disturb the "Kvant" pages layout
+\newcommand\invisiblesubsubsection[1]{%
+  \refstepcounter{subsubsection}%
+  \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}%
+  \subsubsectionmark{#1}
+}
